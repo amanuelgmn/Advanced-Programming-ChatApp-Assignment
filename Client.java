@@ -33,3 +33,11 @@ public class Client {
     }
 }
 
+// Commands the user can use:
+//
+// /list                  -> show all online users
+// /msg <username> <message>  -> send private message
+//
+// Example:
+// /list
+// /msg Amanuel hey bro!how are you!
