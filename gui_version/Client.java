@@ -1,5 +1,4 @@
-package Java_chatApp;
-
+package Java_chatApp.gui_version;
 import java.io.*;
 import java.net.Socket;
 

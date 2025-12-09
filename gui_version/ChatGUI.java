@@ -1,4 +1,4 @@
-package Java_chatApp;
+package Java_chatApp.gui_version;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
