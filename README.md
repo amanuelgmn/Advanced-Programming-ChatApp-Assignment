@@ -49,3 +49,9 @@ This is a simple command-line chat application built in Java. It allows multiple
     /msg Amanuel Hello, how are you?
     ```
     This will send the message "Hello, how are you?" to the user named "Amanuel".
+
+## GUI Version
+
+For a more user-friendly experience, a GUI version of the chat application is available. You can find the instructions on how to run and use the GUI version here:
+
+[GUI Version Instructions](./gui_version/instruction.md)
