@@ -1,3 +1,4 @@
+package Java_chatApp;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -59,12 +60,20 @@ public class ClientHandler extends Thread {
         } catch (IOException e) {
             System.out.println(clientName + " disconnected.");
         } finally {
-            try {
-                clients.remove(this);
-                clientMap.remove(clientName);
-                broadcast("❌ " + clientName + " left the chat.");
-                socket.close();
-            } catch (IOException ignored) {}
+             try {
+        // Broadcast leaving message first
+        broadcast("❌ " + clientName + " left the chat.");
+
+        // Then remove client from lists
+        synchronized (clients) {
+            clients.remove(this);
+        }
+        synchronized (clientMap) {
+            clientMap.remove(clientName);
+        }
+
+        socket.close();
+    } catch (IOException ignored) {}
         }
     }
 
@@ -72,7 +81,9 @@ public class ClientHandler extends Thread {
     private void broadcast(String message) {
         synchronized (clients) {
             for (ClientHandler client : clients) {
-                client.out.println(message);
+                if (client.socket.isConnected() && !client.socket.isClosed()) {
+                    client.out.println(message);
+            }
             }
         }
     }
