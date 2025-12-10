@@ -40,3 +40,4 @@ This is the GUI version of the Java Chat Application. It provides a graphical us
 
     *   `/list`: Show a list of all online users.
     *   `/msg <username> <message>`: Send a private message to a specific user.
+    **JavaFX is required inorder to run this GUI version.**
